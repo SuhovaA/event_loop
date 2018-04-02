@@ -33,7 +33,6 @@ wait_socket_readable(\*STDIN, sub {
         if ($buf eq "exit\n") { exit 0;}
     }
 });
-
 wait_socket_readable(\*SOCK, sub {
     my $read = sysread(\*SOCK, my $buf, 1024);
     if ($read) {

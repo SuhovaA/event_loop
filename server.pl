@@ -5,6 +5,7 @@ use IO::Select;
 use Carp;
 use Fcntl qw(F_GETFL F_SETFL O_NONBLOCK);
 use Errno qw(EAGAIN EINTR EWOULDBLOCK);
+
 sub logmsg { print "$0 $$: @_ at ", scalar localtime(), "\n" }
 my $port  = 8888;
 my $proto = getprotobyname("tcp");
