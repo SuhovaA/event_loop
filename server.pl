@@ -17,13 +17,6 @@ listen($fd_server, SOMAXCONN) or  die "listen: $!";
 logmsg "Server started on port $port";
 
 
-
-#my $flags0 = fcntl($fd_server, F_GETFL, 0)
-#        or die "Can't get flags for the socket: $!\n";
-#$flags0 = fcntl($fd_server, F_SETFL, $flags0 | O_NONBLOCK)
-#        or die "Can't set flags for the socket: $!\n";
-
-
 my $select = IO::Select->new();
 
 our %waiters;
